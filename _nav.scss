@@ -1,0 +1,28 @@
+@use "base";
+
+nav {
+    ul{
+        display: flex;
+        list-style-type: none;
+        background-color: base.$background-color;
+        overflow: auto;
+        padding: 0;
+        margin: 0 0;
+        margin-bottom: base.$padding-16;
+    }
+    li{
+        justify-content: left;
+    }
+    a{
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: white;
+        padding: 16px 18px;
+
+        &:hover{
+            background-color: beige;
+            color: black;
+        }
+    }
+}
