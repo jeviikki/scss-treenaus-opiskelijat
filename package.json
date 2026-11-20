@@ -1,0 +1,16 @@
+{
+  "name": "scss-treenaus-opiskelijat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "npx sass style.scss output.css",
+    "watch": "npx sass --watch style.scss output.css"
+  },
+  "keywords": [],
+  "type": "module",
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}
