@@ -1,11 +1,42 @@
 @use "base";
-@use "nav";
+@use "footer";
 @use "sass:color";
 
 body {
   font-family: base.$primary-font;
   margin: 0;
 }
+section{
+  display: grid;
+  margin: 1em;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "card card card";
+}
+
+%card-shared{
+  border: 1px solid grey;
+  border-radius: 16px;
+  padding: 16px;
+  grid-area: "card";
+  
+}
+#card-1 {
+  @extend %card-shared;
+}
+#card-2 {
+  @extend %card-shared;
+}
+
+#card-3 {
+  @extend %card-shared;
+}
+
+
+
+
+// vanhat
+/*
 %piiloluokka{
   // ei käänny, voi yhdistää luokkia tällä
   margin: auto;
@@ -81,4 +112,4 @@ body {
 }
 .btn-success{
   @include btn(base.$success-color, base.$lg);
-}
+}*/

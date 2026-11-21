@@ -1,25 +1,7 @@
-nav ul {
-  display: flex;
-  list-style-type: none;
-  background-color: #636363;
-  overflow: auto;
-  padding: 0;
-  margin: 0 0;
-  margin-bottom: 16px;
-}
-nav li {
-  justify-content: left;
-}
-nav a {
-  display: block;
-  text-decoration: none;
-  text-transform: capitalize;
+@charset "UTF-8";
+footer {
+  background-color: black;
   color: white;
-  padding: 16px 18px;
-}
-nav a:hover {
-  background-color: beige;
-  color: black;
 }
 
 body {
@@ -27,19 +9,45 @@ body {
   margin: 0;
 }
 
-.textbox2, .textbox1 {
-  border: 1px solid #1d103b;
-  padding: 16px;
-  border-radius: 10px;
-  width: 50%;
+section {
+  display: grid;
+  margin: 1em;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "card card card";
 }
 
+#card-3, #card-2, #card-1 {
+  border: 1px solid grey;
+  border-radius: 16px;
+  padding: 16px;
+  grid-area: "card";
+}
+
+/*
+%piiloluokka{
+  // ei käänny, voi yhdistää luokkia tällä
+  margin: auto;
+  color: red;
+}
+%textbox-shared{
+  border: 1px solid #1d103b;
+  padding: base.$padding-16;
+  border-radius: 10px;
+  width: base.$half-width;
+}
 .textbox1 {
-  background-color: rgb(60%, 89.9607843137%, 100%);
+  @extend %textbox-shared;
+  background-color: 
+  color.adjust(base.$primary-color,
+  $lightness: 30%,
+  $space:hsl)
+ ;
 }
 
 .textbox2 {
-  background-color: deepskyblue;
+  @extend %textbox-shared;
+  background-color: base.$primary-color;
 }
 
 .center {
@@ -49,21 +57,22 @@ body {
   text-align: center;
 }
 
-.image1 {
+@mixin img-filter($percentage) {
   display: block;
-  width: 50%;
-  margin: 16px;
-  filter: blur(5px);
+  width: base.$half-width;
+  margin: base.$padding-16;
+  filter: blur($percentage);
+}
+
+.image1 {
+  @include img-filter(5px);
 }
 
 .image2 {
-  display: block;
-  width: 50%;
-  margin: 16px;
-  filter: blur(10px);
+  @include img-filter(10px);
 }
 
-.buttons {
+.buttons{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -71,37 +80,26 @@ body {
   margin-block: 24px;
 }
 
-.btn-primary {
-  background-color: rgb(239, 102, 28);
-  border: 2px dashed rgb(239, 102, 28);
-  height: 24px;
+@mixin btn($color, $size) {
+  background-color: $color;
+  border: 2px dashed $color;
+  height: $size;
   border-radius: 15px;
-  color: #1d103b;
+  color:#1d103b;
   width: 130px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.btn-warning {
-  background-color: rgb(255, 228, 50);
-  border: 2px dashed rgb(255, 228, 50);
-  height: 32px;
-  border-radius: 15px;
-  color: #1d103b;
-  width: 130px;
-  font-weight: 700;
-  cursor: pointer;
+.btn-primary{
+  @include btn(base.$danger-color, base.$sm);
 }
 
-.btn-success {
-  background-color: rgb(16, 220, 135);
-  border: 2px dashed rgb(16, 220, 135);
-  height: 48px;
-  border-radius: 15px;
-  color: #1d103b;
-  width: 130px;
-  font-weight: 700;
-  cursor: pointer;
+.btn-warning{
+  @include btn(base.$warning-color, base.$md);
 }
+.btn-success{
+  @include btn(base.$success-color, base.$lg);
+}*/
 
 /*# sourceMappingURL=output.css.map */
