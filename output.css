@@ -1,7 +1,10 @@
 @charset "UTF-8";
 footer {
-  background-color: black;
+  background-color: #222222;
   color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -18,10 +21,38 @@ section {
 }
 
 #card-3, #card-2, #card-1 {
-  border: 1px solid grey;
+  border: 1px solid #222222;
   border-radius: 16px;
+  background-color: white;
   padding: 16px;
   grid-area: "card";
+  transition: 0.2s ease;
+}
+#card-3 h1, #card-2 h1, #card-1 h1 {
+  font-size: 1.75em;
+}
+#card-3 p, #card-2 p, #card-1 p {
+  color: #222222;
+}
+#card-3 span, #card-2 span, #card-1 span {
+  font-size: 0.75em;
+  color: rgb(109, 109, 109);
+}
+#card-3:hover, #card-2:hover, #card-1:hover {
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.421);
+  scale: 1.05;
+}
+
+#card-1 {
+  border-bottom: rgb(16, 220, 135) 0.5em solid;
+}
+
+#card-2 {
+  border-bottom: rgb(255, 228, 50) 0.5em solid;
+}
+
+#card-3 {
+  border-bottom: rgb(239, 102, 28) 0.5em solid;
 }
 
 /*

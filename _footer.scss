@@ -1,4 +1,9 @@
+@use "base";
+
 footer{
-    background-color: black;
+    background-color: base.$dark-color;
     color: white;
+    padding: base.$padding-16;
+    display: flex;
+    justify-content: center;
 }

@@ -5,6 +5,7 @@
 body {
   font-family: base.$primary-font;
   margin: 0;
+
 }
 section{
   display: grid;
@@ -15,25 +16,43 @@ section{
 }
 
 %card-shared{
-  border: 1px solid grey;
+  border: 1px solid base.$dark-color;
   border-radius: 16px;
-  padding: 16px;
+  background-color: white;
+  padding: base.$padding-16;
   grid-area: "card";
-  
+  transition: 0.2s ease;
+  h1{
+    font-size: base.$lg;
+  }
+  p{
+    color: base.$dark-color;
+  }
+  span{
+    font-size: base.$md;
+    color: base.$extra-color;
+  }
+  &:hover{
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.421);
+    scale: 1.05;
+  }
+}
+
+@mixin colored-border($color) {
+  border-bottom: $color 0.5em solid;
 }
 #card-1 {
   @extend %card-shared;
+  @include colored-border(base.$success-color);
 }
 #card-2 {
   @extend %card-shared;
+  @include colored-border(base.$warning-color);
 }
-
 #card-3 {
   @extend %card-shared;
+  @include colored-border(base.$danger-color);
 }
-
-
-
 
 // vanhat
 /*
