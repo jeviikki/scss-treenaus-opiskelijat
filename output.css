@@ -10,6 +10,9 @@ footer {
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 95vh 1fr;
 }
 
 section {
@@ -17,6 +20,7 @@ section {
   margin: 1em;
   gap: 1em;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "card card card";
 }
 
@@ -26,7 +30,7 @@ section {
   background-color: white;
   padding: 16px;
   grid-area: "card";
-  transition: 0.2s ease;
+  transition: 1s ease;
 }
 #card-3 h1, #card-2 h1, #card-1 h1 {
   font-size: 1.75em;
@@ -39,8 +43,8 @@ section {
   color: rgb(109, 109, 109);
 }
 #card-3:hover, #card-2:hover, #card-1:hover {
-  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.421);
-  scale: 1.05;
+  box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.5em);
 }
 
 #card-1 {
@@ -55,6 +59,13 @@ section {
   border-bottom: rgb(239, 102, 28) 0.5em solid;
 }
 
+@media (max-width: 600px) {
+  section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "card" "card" "card";
+  }
+}
 /*
 %piiloluokka{
   // ei käänny, voi yhdistää luokkia tällä
